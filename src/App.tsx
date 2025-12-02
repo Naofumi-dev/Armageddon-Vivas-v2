@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
+import Chatbot from './components/Chatbot';
 
 const App: React.FC = () => {
   const [darkMode, setDarkMode] = useState(false);
@@ -33,6 +34,7 @@ const App: React.FC = () => {
       <main>
         <Hero />
       </main>
+      <Chatbot />
     </div>
   );
 };
