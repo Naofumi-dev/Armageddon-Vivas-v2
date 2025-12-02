@@ -1,5 +1,4 @@
-
-import { Project, Testimonial, Service, FAQItem, Tool, ProcessStep, Deliverable, VideoTestimonial } from './types';
+import { Project, Testimonial, Service, FAQItem, Tool, ProcessStep, Deliverable, VideoTestimonial } from './components/types';
 
 export const SERVICES: Service[] = [
   {
@@ -212,7 +211,7 @@ export const VIDEO_TESTIMONIALS: VideoTestimonial[] = [
   {
     id: 'v_ai',
     thumbnail: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1965&auto=format&fit=crop',
-    videoUrl: 'https://www.youtube.com/embed/uKy7cQNX5nI', // Real AI Avatar Demo (HeyGen)
+    videoUrl: 'https://www.youtube.com/embed/uKy7cQNX5nI',
     clientName: 'Atlas',
     role: 'AI Operations Agent',
     company: 'Armageddon Automation',
