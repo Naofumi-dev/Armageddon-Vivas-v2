@@ -1,7 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
+import About from './components/About';
+import Services from './components/Services';
+import Projects from './components/Projects';
+import Process from './components/Process';
+import Tools from './components/Tools';
+import BeforeAfter from './components/BeforeAfter';
+import Testimonials from './components/Testimonials';
+import VideoTestimonials from './components/VideoTestimonials';
+import Deliverables from './components/Deliverables';
+import FAQ from './components/FAQ';
+import Contact from './components/Contact';
+import Footer from './components/Footer';
+import FloatingCTA from './components/FloatingCTA';
 import Chatbot from './components/Chatbot';
+import SEO from './components/SEO';
 
 const App: React.FC = () => {
   const [darkMode, setDarkMode] = useState(false);
@@ -29,13 +43,29 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-slate-900 transition-colors duration-300">
-      <Header darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
-      <main>
-        <Hero />
-      </main>
-      <Chatbot />
-    </div>
+    <>
+      <SEO />
+      <div className="min-h-screen bg-slate-50 dark:bg-slate-900 transition-colors duration-300">
+        <Header darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
+        <main>
+          <Hero />
+          <About />
+          <Services />
+          <BeforeAfter />
+          <Projects />
+          <Process />
+          <Tools />
+          <Testimonials />
+          <VideoTestimonials />
+          <Deliverables />
+          <FAQ />
+          <Contact />
+        </main>
+        <Footer />
+        <FloatingCTA />
+        <Chatbot />
+      </div>
+    </>
   );
 };
 
