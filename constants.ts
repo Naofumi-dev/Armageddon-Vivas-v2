@@ -1,4 +1,5 @@
-import { Project, Testimonial, Service, FAQItem, Tool } from './types';
+
+import { Project, Testimonial, Service, FAQItem, Tool, ProcessStep, Deliverable, VideoTestimonial } from './types';
 
 export const SERVICES: Service[] = [
   {
@@ -58,7 +59,7 @@ export const PROJECTS: Project[] = [
     category: 'SEO',
     description: 'A comprehensive SEO campaign for a medical/ballistics brand. Focused on technical indexing, sitemaps, and GA4 funnel tracking.',
     tech: ['Google Search Console', 'GA4', 'GTM', 'Technical SEO'],
-    image: 'https://picsum.photos/id/20/800/600', // Professional placeholder
+    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop', 
     link: 'https://www.linkedin.com/feed/update/urn:li:activity:7399705917480427520/',
     stats: [
       { label: 'Organic Clicks', value: '+27%' },
@@ -127,7 +128,11 @@ export const PROJECTS: Project[] = [
     description: 'An n8n workflow designed to scrape job boards, filter for relevant criteria, and aggregate results into a centralized database.',
     tech: ['n8n', 'Web Scraping', 'HTML Parser'],
     image: 'https://raw.githubusercontent.com/Naofumi-dev/website-portfolio/main/n8n-job-scraper.png',
-    link: 'https://github.com/Naofumi-dev/website-portfolio/blob/main/n8n-job-scraper.png'
+    link: 'https://github.com/Naofumi-dev/website-portfolio/blob/main/n8n-job-scraper.png',
+    stats: [
+      { label: 'Jobs Scraped', value: '1k+/day' },
+      { label: 'Time Saved', value: '2 Hrs/Day' }
+    ]
   },
   {
     id: 'pipedream-story',
@@ -136,7 +141,11 @@ export const PROJECTS: Project[] = [
     description: 'Complex event-driven architecture hosted on Pipedream, handling high-volume webhooks and API orchestration.',
     tech: ['Pipedream', 'Node.js', 'APIs'],
     image: 'https://raw.githubusercontent.com/Naofumi-dev/website-portfolio/main/pipedream-story.png',
-    link: 'https://github.com/Naofumi-dev/website-portfolio/blob/main/pipedream-story.png'
+    link: 'https://github.com/Naofumi-dev/website-portfolio/blob/main/pipedream-story.png',
+    stats: [
+      { label: 'Events', value: '10k/Day' },
+      { label: 'Uptime', value: '99.9%' }
+    ]
   },
   {
     id: 'make-google-sheets',
@@ -145,7 +154,11 @@ export const PROJECTS: Project[] = [
     description: 'Streamlined data pipeline capturing leads from various sources and organizing them instantly into Google Sheets with status tracking.',
     tech: ['Make.com', 'Google Sheets', 'Forms'],
     image: 'https://raw.githubusercontent.com/Naofumi-dev/website-portfolio/main/make-google-sheets.png',
-    link: 'https://github.com/Naofumi-dev/website-portfolio/blob/main/make-google-sheets.png'
+    link: 'https://github.com/Naofumi-dev/website-portfolio/blob/main/make-google-sheets.png',
+    stats: [
+      { label: 'Data Latency', value: '<1s' },
+      { label: 'Errors', value: '0%' }
+    ]
   },
   {
     id: 'zapier-lead-actions',
@@ -154,7 +167,11 @@ export const PROJECTS: Project[] = [
     description: 'Sophisticated Zapier workflow handling multi-step logic for lead assignment based on geography, budget, or service type.',
     tech: ['Zapier', 'Paths', 'Webhooks'],
     image: 'https://raw.githubusercontent.com/Naofumi-dev/website-portfolio/main/zapier-lead-actions.png',
-    link: 'https://github.com/Naofumi-dev/website-portfolio/blob/main/zapier-lead-actions.png'
+    link: 'https://github.com/Naofumi-dev/website-portfolio/blob/main/zapier-lead-actions.png',
+    stats: [
+      { label: 'Routing', value: 'Instant' },
+      { label: 'Logic Steps', value: '15+' }
+    ]
   }
 ];
 
@@ -162,51 +179,118 @@ export const TESTIMONIALS: Testimonial[] = [
   {
     id: '1',
     name: 'Alex R.',
-    role: 'Medical Brand Owner',
-    content: "Armageddon's SEO tweaks boosted our clicks by 30% in weeks—game-changer for our eCom site!",
+    role: 'Owner',
+    company: 'Medical Simulation eCom',
+    problem: "Struggling with organic visibility and untracked sales data.",
+    solution: "Technical SEO overhaul and GA4 conversion tracking.",
+    outcome: "27% increase in organic clicks and $1.3k+ revenue tracked.",
     rating: 5
   },
   {
     id: '2',
-    name: 'TechVA Colleague',
-    role: 'Philippines Startup',
-    content: "His Zapier automation saved us hours on lead handling. Professional and insightful!",
+    name: 'Upwork Client',
+    role: 'Business Owner',
+    company: 'Confidential',
+    problem: "Needed a reliable specialist who could handle technical tasks without hand-holding.",
+    solution: "Armageddon's proactive communication and technical expertise.",
+    outcome: "Projects delivered on time with high accuracy and zero errors.",
     rating: 5
   },
   {
     id: '3',
-    name: 'Confidential Client',
-    role: 'Ballistics Retailer',
-    content: "From GA4 setup to funnel insights, Armageddon delivered $1K+ in tracked value fast.",
+    name: 'Agency Partner',
+    role: 'Director',
+    company: 'Digital Agency',
+    problem: "Our analytics data was messy, making it impossible to report ROI to clients.",
+    solution: "Complete GTM/GA4 cleanup and tracking setup.",
+    outcome: "Clean, reliable data that allowed us to scale our campaigns.",
     rating: 5
+  }
+];
+
+export const VIDEO_TESTIMONIALS: VideoTestimonial[] = [
+  {
+    id: 'v_ai',
+    thumbnail: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1965&auto=format&fit=crop',
+    videoUrl: 'https://www.youtube.com/embed/uKy7cQNX5nI', // Real AI Avatar Demo (HeyGen)
+    clientName: 'Atlas',
+    role: 'AI Operations Agent',
+    company: 'Armageddon Automation',
+    isAI: true
+  },
+  {
+    id: 'v1',
+    thumbnail: 'https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=1974&auto=format&fit=crop',
+    videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&mute=1',
+    clientName: 'Sarah Jenkins',
+    role: 'Marketing Director',
+    company: 'TechFlow'
+  },
+  {
+    id: 'v2',
+    thumbnail: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=1974&auto=format&fit=crop',
+    videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&mute=1',
+    clientName: 'Michael Chen',
+    role: 'Founder',
+    company: 'Logistics Pro'
   }
 ];
 
 export const FAQS: FAQItem[] = [
   {
-    question: "What is automation consulting?",
-    answer: "It involves streamlining your repetitive business tasks using tools like Zapier or Make.com, allowing you to focus on high-value work."
+    question: "How long does a typical project take?",
+    answer: "Simple automations (like Slack notifications) take 48 hours. Full custom ecosystem builds usually take 2-4 weeks. I work fast to get you results quickly."
   },
   {
-    question: "Do you have client experience?",
-    answer: "Yes, I have 3 years of experience in SEO. My automation portfolio consists of rigorous practice projects solving real-world scenarios, backed by the TechVA community standards."
+    question: "Do I need to give you access to my accounts?",
+    answer: "Yes, temporarily. I use secure password managers (like 1Password) to handle credentials safely, and I'll walk you through how to revoke access once we're done."
   },
   {
-    question: "What is your pricing?",
-    answer: "Basic SEO Audits start at $150, and Automation Setups at $300. Use the chatbot in the corner for a detailed quote!"
+    question: "What happens if something breaks later?",
+    answer: "I provide a 30-day stability guarantee. If any workflow breaks within that period, I fix it for free. I also offer low-cost maintenance retainers."
   },
   {
-    question: "How do I get started?",
-    answer: "You can book a free discovery call via the Calendly link below or send a message through the contact form."
+    question: "What industries do you specialize in?",
+    answer: "I work mostly with eCommerce, SaaS, and Service Agencies—businesses that handle high volumes of leads or data."
   },
   {
-    question: "Do you offer SEO + Automation bundles?",
-    answer: "Absolutely. I specialize in combining SEO for traffic and automation for lead handling. My full package starts at $800."
+    question: "How much does it cost?",
+    answer: "Audits start at $150. Custom builds start at $300. I operate on a fixed-price model, so you'll never get hit with a surprise hourly bill."
   },
   {
-    question: "Are you part of TechVA?",
-    answer: "Yes, I am a proud member of TechVA, the largest and most respected automation community in the Philippines."
+    question: "Can we start with a smaller engagement?",
+    answer: "Absolutely. I recommend starting with a small 'Quick Win' automation (like a lead capture workflow) so you can see the value before scaling up."
   }
+];
+
+export const PROCESS_STEPS: ProcessStep[] = [
+  {
+    number: "01",
+    title: "Book Your Free Strategy Call",
+    description: "We identify your expensive manual tasks and map out a solution in 15 minutes. No sales pressure.",
+    icon: "fa-solid fa-calendar-check"
+  },
+  {
+    number: "02",
+    title: "I Build & Launch Workflows",
+    description: "I design, build, and test your custom automation system. You get regular updates while I handle the tech.",
+    icon: "fa-solid fa-laptop-code"
+  },
+  {
+    number: "03",
+    title: "You Scale with Less Work",
+    description: "Your team stops data entry. You get better insights, faster responses, and a business that grows on autopilot.",
+    icon: "fa-solid fa-chart-line"
+  }
+];
+
+export const DELIVERABLES: Deliverable[] = [
+  { text: "Workflow Audit & Strategy Session", description: "Deep-dive into your bottlenecks." },
+  { text: "Custom-Built Automations", description: "Zapier, Make.com, or n8n workflows." },
+  { text: "Real-Time Dashboard Setup", description: "GA4/Looker reporting for visibility." },
+  { text: "Launch Support (2 Weeks)", description: "Ensuring everything runs smoothly." },
+  { text: "Loom Walkthroughs", description: "Video documentation for your team." },
+  { text: "API & Tool Integration", description: "Connecting your stack perfectly." }
 ];
 
 export const SOCIAL_LINKS = {

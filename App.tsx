@@ -1,15 +1,21 @@
+
 import React, { useState, useEffect } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import About from './components/About';
+import BeforeAfter from './components/BeforeAfter';
+import Deliverables from './components/Deliverables';
 import Services from './components/Services';
+import Process from './components/Process';
 import Tools from './components/Tools';
 import Projects from './components/Projects';
 import Testimonials from './components/Testimonials';
+import VideoTestimonials from './components/VideoTestimonials';
 import FAQ from './components/FAQ';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Chatbot from './components/Chatbot';
+import FloatingCTA from './components/FloatingCTA';
 import SEO from './components/SEO';
 
 const App: React.FC = () => {
@@ -46,16 +52,21 @@ const App: React.FC = () => {
       <main>
         <Hero />
         <About />
+        <BeforeAfter />
+        <Deliverables />
         <Services />
+        <Process />
         <Tools />
         <Projects />
         <Testimonials />
+        <VideoTestimonials />
         <FAQ />
         <Contact />
       </main>
 
       <Footer />
       <Chatbot />
+      <FloatingCTA />
     </div>
   );
 };

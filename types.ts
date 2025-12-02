@@ -1,3 +1,4 @@
+
 export interface Project {
   id: string;
   title: string;
@@ -13,8 +14,21 @@ export interface Testimonial {
   id: string;
   name: string;
   role: string;
-  content: string;
+  company?: string;
+  problem: string;
+  solution: string;
+  outcome: string;
   rating: number;
+}
+
+export interface VideoTestimonial {
+  id: string;
+  thumbnail: string;
+  videoUrl: string;
+  clientName: string;
+  role: string;
+  company?: string;
+  isAI?: boolean;
 }
 
 export interface Service {
@@ -42,4 +56,16 @@ export interface ChatMessage {
   sender: 'bot' | 'user';
   timestamp: Date;
   isAction?: boolean;
+}
+
+export interface ProcessStep {
+  number: string;
+  title: string;
+  description: string;
+  icon: string;
+}
+
+export interface Deliverable {
+  text: string;
+  description?: string;
 }

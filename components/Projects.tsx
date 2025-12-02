@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { PROJECTS } from '../constants';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -28,12 +29,13 @@ const Projects: React.FC = () => {
             >
               {/* Image Container */}
               <div 
-                className="md:w-1/2 h-72 md:h-96 overflow-hidden relative group cursor-pointer bg-slate-100 dark:bg-slate-900 flex items-center justify-center p-8"
+                className="md:w-1/2 h-72 md:h-96 overflow-hidden relative group cursor-pointer bg-slate-100 dark:bg-slate-900 flex items-center justify-center p-6"
                 onClick={() => setSelectedImage(project.image)}
               >
                 <img 
                     src={project.image} 
-                    alt={project.title} 
+                    alt={`${project.title} - ${project.category} Project Screenshot`}
+                    loading="lazy"
                     className="w-full h-full object-contain transform group-hover:scale-105 transition-transform duration-500 shadow-sm rounded-md"
                 />
                 <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
